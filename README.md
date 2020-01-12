@@ -40,3 +40,4 @@ fulldata <- bind_rows(combin) %>%
   filter(!(startsWith(name, "."))) %>%
   filter(!(startsWith(name, "_")))
  ``` 
+This could be an starting point for order and made more searchable and findable our materials.
