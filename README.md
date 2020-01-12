@@ -25,7 +25,7 @@ repolist2 <- fromJSON("https://api.github.com/users/rladies/repos?page=2&per_pag
      value = T, ignore.case = T)combin <- list()
 for (r in 1:length(pres_repos)){
   try(url <- GET(paste0("https://api.github.com/repos/rladies", "/", pres_repos[r], "/contents"),
-                 authenticate("mfoos", Sys.getenv("GITHUBTOKEN")),
+                 authenticate("user name", Sys.getenv("GITHUBTOKEN")),
                  query = list(state = "all")))
   if (!(is.null(url))){
     contents <- fromJSON(content(url, type = "text"))
