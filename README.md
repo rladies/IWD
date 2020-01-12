@@ -4,8 +4,8 @@ Every March 8 International Women's Day is celebrated, from R-Ladies a campaign 
 
 Here some details of previous campaigns:
 
-2019: [IWD 2019 Twitter Action](https://blog.rladies.org/post/blog_iwdtwitter_2019/)
-2018: [Behind the scenes of R-Ladies IWD2018 Twitter action!](https://blog.rladies.org/post/ideation_and_creation/)
+* 2019: [IWD 2019 Twitter Action](https://blog.rladies.org/post/blog_iwdtwitter_2019/)
+* 2018: [Behind the scenes of R-Ladies IWD2018 Twitter action!](https://blog.rladies.org/post/ideation_and_creation/)
 
 ## Other ideas for future campaings:
 
