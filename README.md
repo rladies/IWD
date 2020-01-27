@@ -7,13 +7,13 @@ Here some details of previous campaigns:
 * 2019: [IWD 2019 Twitter Action](https://blog.rladies.org/post/blog_iwdtwitter_2019/)
 * 2018: [Behind the scenes of R-Ladies IWD2018 Twitter action!](https://blog.rladies.org/post/ideation_and_creation/)
 
-## Other ideas for future campaings:
+## Other ideas for future campaigns:
 
-- Catalog the meetups material in github from the chapters and tweet this materials during the campaing.
+- Catalog the meetups material in github from the chapters and tweet this materials during the campaign.
 - Made a list of blogs of R-Ladies and a post choose by the autor and tweet this materials during 8 March.
 - Made a list of packages made for R-Ladies and post this during the campaing.
 
-## Catalog the meetups material in github from the chapters and tweet this materials during the campaing.
+## Catalog the meetups material in github from the chapters and tweet this materials during the campaign.
 
 We have this code made by Marianna Foos as a starting point:
 
