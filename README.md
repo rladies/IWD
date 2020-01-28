@@ -48,6 +48,6 @@ Step 1: a week before 8M we start tweeting about the campaing, we can use some t
 
 Step 2: the day before 8M we post some stats abour R-Ladies events: here are a [code](https://github.com/rladies/IWD/blob/master/events.R) wirh some stats idea as a strating point. This is [file with the data](https://github.com/rladies/IWD/blob/master/eventsRLadiesUntilJanuary2020.csv)
 
-Step 3: for the 8M (48 hours) tweet with the material from Chapters repo.
+Step 3: for the 8M (48 hours) tweet with the material from Chapters repo (we have to solve how we make the list of materials).
 
 Step 4: Celebrate and enjoy another IWD!!
