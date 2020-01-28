@@ -41,3 +41,9 @@ fulldata <- bind_rows(combin) %>%
   filter(!(startsWith(name, "_")))
  ``` 
 This could be an starting point for order and made more searchable and findable our materials.
+
+## Campaign
+
+Step 1: a week before 8M we start tweeting about the campaing, we can use some this as a start point: https://www.canva.com/design/DADQogEJSyE/DKhQvMc602cnmCtt4w1jhg/edit
+
+Step 2: the day before 8M we post some stats abour R-Ladies events: here are a [code](https://github.com/rladies/IWD/blob/master/events.R) wirh some stats idea as a strating point. This is [file with the data](https://github.com/rladies/IWD/blob/master/eventsRLadiesUntilJanuary2020.csv)
