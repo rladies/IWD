@@ -106,3 +106,8 @@ eventos_todos_juntos %>%
   ggplot(aes(y=asistentes, x=`year(time)`)) +
   geom_col(aes(fill=`year(time)`))
 
+#TODO: a. Cantidad de eventos por día de la semana en total.
+#      b. Horario de los eventos en total
+#      c. Mapa de puntos, con el tamaño del punto de acuerdo a la cantidad de eventos realizados.
+
+
