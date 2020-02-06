@@ -1,7 +1,11 @@
 # Code by yabellini (Yanina Bellini Saibene) for IWD2020
 
+# Package installation
+install.packages(c("purrr", "dplyr", "tidyr", "lubridate", "ggplot2"))
+
 # API KEY de Meetup
 Sys.setenv(MEETUP_KEY = "your meetup key")
+
 
 # Paquetes necesarios para trabajar
 # Packages
