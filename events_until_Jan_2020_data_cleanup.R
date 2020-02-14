@@ -1,1 +1,8 @@
-
+Sys.setlocale("LC_ALL", "C") 
+data <- url("https://raw.githubusercontent.com/rladies/IWD/master/eventsRLadiesUntilJanuary2020.csv") 
+events_2020 <- read.csv(data)  
+events_2020$name <- gsub("[^0-9A-Za-z///' ]", "", events_2020$name)
+events_2020$venue_name <- gsub("[^0-9A-Za-z///' ]", "", events_2020$venue_name)
+events_2020$venue_address_1 <- gsub("[^0-9A-Za-z///' ]", "", events_2020$venue_address_1)
+events_2020$description <- gsub("[^0-9A-Za-z///' ]", "", events_2020$description)
+write.csv(events_2020, "eventsRLadiesUntilJanuary2020_clean.csv")
