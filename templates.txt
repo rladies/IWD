@@ -1,0 +1,28 @@
+Posibles adjectives and text for build the web and repo tweets:
+
+templates_web_pages <- c("Did you know that X has a adjective web page full of awesome content? You can visit here!",
+  
+  "Hop over to watch this adjective web page for our X chapter!",
+
+"Do you like #rstats? Looking to learn more? Visit the X chapter's adjective web page!",
+
+"Looking for something to inspire you? browse the adjective chapter X's web page",
+
+"Learn all about what #rstat with this adjective web page from chapter X!",
+  
+  "We are so proud of our adjective chapter in X!",
+  
+  "Nourish your mind today! Watch this adjective chapter X material!",
+
+"Want some ideas to implement at your meetup? chapter X have some in store for you!",
+
+"Did you know that you can build your own websites all in R?! Check the website of chapter X here:",
+
+)
+
+
+web_chapter_adjectives <- c("awesome", "fantastic", "wonderful", "amazing",  "phenomenal", "remarkable", ", "incredible",  "magnificent", "marvelous", "insightful", "admirable", "outstanding", "splendid", "exceptional")
+
+repo_chapter_adjectives <- c("awesome", "fantastic", "wonderful", "amazing",  "phenomenal", "remarkable", ", "incredible",  "magnificent", "marvelous", "insightful", "admirable", "outstanding", "splendid", "exceptional", "intuitive", "brilliant", "excellent", "great", "resourceful", "spectacular","cool", "super", "epic")
+
+meterial_adjectives <- c("awesome", "fantastic", "wonderful", "amazing",  "phenomenal", "remarkable", ", "incredible",  "magnificent", "marvelous", "insightful", "admirable", "outstanding", "splendid", "exceptional", "cool", "super", "epic")
