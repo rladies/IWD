@@ -2,16 +2,23 @@ library(tidyverse)
 
 
 # Clean data --------------------------------------------------------------
-data <- import("filesRLadiesrepos.csv")
+# data_files <- import("filesRLadiesrepos.csv")
+# data_files <- filesRLadiesrepos
+# data_files <- fulldata_final
 
-data <- data %>% 
+data_files <- import("github_repo_files.csv")
+
+data_files <- data_files %>% 
   mutate(repo = str_extract(repo, "_(.*)"),
          repo = str_remove(repo, "_"),
          repo = str_to_title(repo))
 
 ### Count of materials updated by repo 
 
-data %>% 
+cantidad_material <- data_files %>% 
+  count(repo, sort = TRUE)
+
+data_files %>% 
   count(repo, sort = TRUE) %>% 
   filter(n > 5) %>% 
   mutate(repo = fct_reorder(repo, n)) %>% 
@@ -23,7 +30,7 @@ data %>%
        y = "",
        x = "Number of materials")
 
-data <- data %>% 
+data_files <- data_files %>% 
   mutate(path = str_replace_all(path, "[:digit:]", ""),
          path = str_replace_all(path, "^-", ""),
          path = str_replace_all(path, "-", " "),
@@ -31,7 +38,7 @@ data <- data %>%
          path = str_replace_all(path, "_", " "),
          path = str_remove(path, "[.](md|Rmd|pdf|pptx|R|Rproj|jpg|csv|txt|xls|PNG|docx)"))
 
-data <- data %>% 
+data_files <- data_files %>% 
   mutate(name = str_replace_all(name, "[:digit:]", ""),
          name = str_replace_all(name, "^-", ""),
          name = str_replace_all(name, "-", " "),
@@ -40,9 +47,11 @@ data <- data %>%
          name = str_remove(name, "[.](md|Rmd|pdf|pptx|R|Rproj|jpg|csv|txt|xls|PNG|docx)"))
 
 ## Una idea podria ser qué repos tienen contenido sombre x tema?
-data_test <- data %>%
+# perfecto, usé la nube de palabras para determinar los temas 
+
+data_test <- data_files %>%
   mutate(
-    topic = ifelse(str_detect(name, "intro|Básico|beggin"), "Intro", NA),
+    topic = ifelse(str_detect(name, "intro|Básico|beggin|Novice|scratch|Scratch"), "Intro", NA),
     topic = ifelse(str_detect(name, "ggplot|Ggplot"), "ggplot", topic),
     topic = ifelse(str_detect(name, "shiny|Shiny"), "shiny", topic),
     topic = ifelse(str_detect(name, "tidy|Tidy"), "tidyverse", topic),
@@ -51,12 +60,38 @@ data_test <- data %>%
     topic = ifelse(str_detect(name, "dplyr"), "dplyr", topic),
     topic = ifelse(str_detect(name, "blog"), "blogdown", topic),
     topic = ifelse(str_detect(name, "scrap"), "Web scrapping", topic),
-    topic = ifelse(str_detect(name, "map"), "maps", topic),
+    topic = ifelse(str_detect(name, "map|spatial|espacial"), "spatial", topic),
     topic = ifelse(str_detect(name, "docker"), "docker", topic),
     topic = ifelse(str_detect(name, "mining"), "data mining", topic),
     topic = ifelse(str_detect(name, "Machine learning"), "Machine learning", topic),
+    topic = ifelse(str_detect(name, "pack"), "Package", topic),
+    topic = ifelse(str_detect(name, "pur"), "purrr", topic),
+    topic = ifelse(str_detect(name, "datavi|visualizacion"), "Data Vizualization", topic),
+    topic = ifelse(str_detect(name, "model"), "Modelling", topic),
+    topic = ifelse(str_detect(name, "RStudio|rstudio"), "RStudio", topic),
   )
 
-data_test %>% 
+
+#Filtramos el repo de Global porque tiene charlas sobre R-Ladies.
+data_with_topic <- data_test %>%
+  filter(repo == 'Global_presentation') %>%
+  filter(!is.na(topic))
+
+
+#Podríamos filtrar por tema para armar las frases??? 
+
+data_with_topic %>% 
   filter(topic == "Intro") %>% 
+  select(name)
+
+data_with_topic %>% 
+  filter(topic == "ggplot") %>% 
+  select(name)
+
+data_with_topic %>% 
+  filter(topic == "shiny") %>% 
+  select(name)
+
+data_with_topic %>% 
+  filter(topic == "tidyverse") %>% 
   select(name)
