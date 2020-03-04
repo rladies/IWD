@@ -1,3 +1,6 @@
+# Some adds: use este código: str_locate_all(data$Twitter, "/") para encontrar las / y poder generar el tag
+# de twitter en el texto
+
 # Tweets function ---------------------------------------------------------
 library(tidyverse)
 
@@ -25,12 +28,13 @@ sentences <- c(sentences[1],
 # create tweet 
 
 dataTw <- mutate(
-  data,
-  tweet = stringr::str_replace(sentences, "chapter name", data$City),
-  tweet = paste0(tweet, extra_text, {{variable}}),
-  tweet = paste(tweet, "#rladies #iwd2020"),
-  picture = paste("Chapter", str_replace_all(data$City, fixed(" "), ""), ".png")
-)
+    data,
+    tweet = stringr::str_replace(sentences, "chapter name", data$City),
+    tweet = paste0(tweet, extra_text, {{variable}}),
+    tweet = paste(tweet, "#rladies #iwd2020"),
+    tweet = paste(tweet, " @", str_sub(data$Twitter, 21, str_length(data$Twitter)),sep=""),
+    picture = paste("Chapter", str_replace_all(data$City, fixed(" "), ""), ".png",sep="")
+  )
 
 # save tweets
 tweets <- dplyr::select(dataTw, City, tweet, picture) %>%
@@ -71,6 +75,9 @@ github_repo_tweets <- create_tweets(data,
               extra_text = " Repo here: ")
 
 readr::write_csv(github_repo_tweets, path = here::here("websites_repos_topics_tweets", "github_repo_tweets.csv"))
+
+#Used csv2 because we have some encode issues (windows and/or non english characters)
+readr::write_excel_csv2(github_repo_tweets, path = here::here("github_repo_tweets_csv2.csv"))
 
 
 # Websites ----------------------------------------------------------------
