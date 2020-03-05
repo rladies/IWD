@@ -216,7 +216,7 @@ tidyverse_data <- data_with_topic %>%
 
 tidyverse_templates <-
   c(
-    "Are you ready to master the %>% pipe with name chapter adjective materials on #tidyverse!",
+    "Are you ready to master the %>% pipe with chapter name adjective materials on #tidyverse?",
     "Master your data science skills with the #tidyverse ! Check chapter name adjective materials",
     "Are you taking your first R steps? The #tidyverse will make this journey more fun! Check chapter name's adjective materials!",
     "Learn all you need to know about the #tidyverse! Check chapter name adjective materials!",
