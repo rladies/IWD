@@ -53,6 +53,7 @@ data_files <- data_files %>%
 data_with_topic <- data_files %>%
   mutate(
     topic = ifelse(str_detect(name, "intro|Básico|beggin|Novice|scratch|Scratch"), "Intro", NA),
+    topic = ifelse(str_detect(name, "datavi|visualizacion"), "Data Vizualization", topic),
     topic = ifelse(str_detect(name, "ggplot|Ggplot"), "ggplot", topic),
     topic = ifelse(str_detect(name, "shiny|Shiny"), "shiny", topic),
     topic = ifelse(str_detect(name, "tidy|Tidy"), "tidyverse", topic),
@@ -67,7 +68,6 @@ data_with_topic <- data_files %>%
     topic = ifelse(str_detect(name, "Machine learning"), "Machine learning", topic),
     topic = ifelse(str_detect(name, "pack"), "Package", topic),
     topic = ifelse(str_detect(name, "pur"), "purrr", topic),
-    topic = ifelse(str_detect(name, "datavi|visualizacion"), "Data Vizualization", topic),
     topic = ifelse(str_detect(name, "model"), "Modelling", topic),
     topic = ifelse(str_detect(name, "RStudio|rstudio"), "RStudio", topic),
   )
