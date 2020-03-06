@@ -1,5 +1,5 @@
-Some adds: use este código: str_locate_all(data$Twitter, "/") para encontrar las / y poder generar el tag
-de twitter en el texto
+#Some adds: use este código: str_locate_all(data$Twitter, "/") para encontrar las / y poder generar el tag
+# de twitter en el texto
 
 # Tweets function ---------------------------------------------------------
 library(tidyverse)
