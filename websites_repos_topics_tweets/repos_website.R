@@ -352,3 +352,88 @@ blogdown_tweets <- create_tweets(
 readr::write_csv(blogdown_tweets,
                  path = here::here("websites_repos_topics_tweets", "blogdown_tweets.csv"))
 
+# Tweets purrr -----------------------------------------------------------
+data_with_topic <- read_csv(here::here("websites_repos_topics_tweets", "data_with_topic.csv"))
+
+topics <- data_with_topic %>% count(topic, sort = TRUE) %>% slice(6,8,10:17) %>% pull(topic)
+
+purrr_data <- data_with_topic %>% 
+  filter(topic == "purrr") %>% 
+  filter(!is.na(City)) %>% 
+  select(City, html_url) 
+
+purrr_templates <-
+  c(
+    "Loops without a for or a while? Check chapter name adjective materials on #purrr!",
+    "Listen to Jenny Brian and repeat yourself with  #purrr. Check chapter name adjective materials here",
+    "Iterating with #purrr -> Check chapter name adjective materials on it!")
+
+purrr_tweets <- create_tweets(
+  purrr_data,
+  purrr_templates,
+  adjectives,
+  variable = html_url,
+  extra_text = " "
+)
+
+
+readr::write_csv(purrr_tweets,
+                 path = here::here("websites_repos_topics_tweets", "purrr_tweets.csv"))
+
+
+# Tweets spatial -----------------------------------------------------------
+
+#data_with_topic <- read_csv(here::here("websites_repos_topics_tweets", "data_with_topic.csv"))
+
+topics <- data_with_topic %>% count(topic, sort = TRUE) %>% slice(6,8,10:17) %>% pull(topic)
+
+spatial_data <- data_with_topic %>% 
+  filter(topic == "spatial") %>% 
+  filter(!is.na(City)) %>% 
+  select(City, html_url) 
+
+spatial_templates <-
+  c("Do you like maps? Check chapter name adjective materials on #rspatial!",
+    "Maps are great !, Do you want to learn how to do them with #rstats?. Check chapter name adjective materials here",
+    "Geotechnologies and geosciences with #rspatial! Check chapter name adjective materials on it!")
+
+spatial_tweets <- create_tweets(
+  spatial_data,
+  spatial_templates,
+  adjectives,
+  variable = html_url,
+  extra_text = " "
+)
+
+
+readr::write_csv(spatial_tweets,
+                 path = here::here("websites_repos_topics_tweets", "spatial_tweets.csv"))
+
+
+# Tweets Packages -----------------------------------------------------------
+
+#data_with_topic <- read_csv(here::here("websites_repos_topics_tweets", "data_with_topic.csv"))
+
+topics <- data_with_topic %>% count(topic, sort = TRUE) %>% slice(6,8,10:17) %>% pull(topic)
+
+pack_data <- data_with_topic %>% 
+  filter(topic == "Package") %>% 
+  filter(!is.na(City)) %>% 
+  select(City, html_url) 
+
+pack_templates <-
+  c("CRAN is waiting for you package!, learn how to do it Checking chapter name adjective materials on #rpackage!",
+    "Do you want to learn how to do a #rpackage?. Check chapter name adjective materials here",
+    "Check chapter name adjective materials on #rpackage development!")
+
+pack_tweets <- create_tweets(
+  pack_data,
+  pack_templates,
+  adjectives,
+  variable = html_url,
+  extra_text = " "
+)
+
+
+readr::write_csv(pack_tweets,
+                 path = here::here("websites_repos_topics_tweets", "pack_tweets.csv"))
