@@ -437,3 +437,34 @@ pack_tweets <- create_tweets(
 
 readr::write_csv(pack_tweets,
                  path = here::here("websites_repos_topics_tweets", "pack_tweets.csv"))
+
+# Tweets Data Vizualization -----------------------------------------------------------
+
+#data_with_topic <- read_csv(here::here("websites_repos_topics_tweets", "data_with_topic.csv"))
+
+topics <- data_with_topic %>% count(topic, sort = TRUE) %>% slice(6,8,10:17) %>% pull(topic)
+
+dataviz_data <- data_with_topic %>% 
+  filter(topic == "Data Vizualization") %>% 
+  filter(!is.na(City)) %>% 
+  select(City, html_url) 
+
+dataviz_templates <-
+  c(
+    "Feeling like learning about #datavis? chapter name chapter has some adjective materials on it!",
+    "Need to prepare a workshop on #datavis? Browse the adjective chapter name's materials for inspiration!",
+    "#Datavis is fun! Check chapter name adjective materials for extra fun!",
+    "Looking for materials in #datavis? Check chapter name's adjective materials!")
+
+dataviz_tweets <- create_tweets(
+  dataviz_data,
+  dataviz_templates,
+  adjectives,
+  variable = html_url,
+  extra_text = " "
+)
+
+
+readr::write_csv(dataviz_tweets,
+                 path = here::here("websites_repos_topics_tweets", "datavis_tweets.csv"))
+
