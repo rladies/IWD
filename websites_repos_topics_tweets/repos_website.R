@@ -468,3 +468,31 @@ dataviz_tweets <- create_tweets(
 readr::write_csv(dataviz_tweets,
                  path = here::here("websites_repos_topics_tweets", "datavis_tweets.csv"))
 
+# Tweets Modeling -----------------------------------------------------------
+
+#data_with_topic <- read_csv(here::here("websites_repos_topics_tweets", "data_with_topic.csv"))
+
+topics <- data_with_topic %>% count(topic, sort = TRUE) %>% slice(6,8,10:17) %>% pull(topic)
+
+modeling_data <- data_with_topic %>% 
+  filter(topic == "Modelling") %>% 
+  filter(!is.na(City)) %>%
+  filter(City == "Bari") %>% #Bari has a New Year's Eve greeting and a word in Italian has the tag search pattern and is misclassified
+  select(City, html_url) 
+
+modeling_templates <-
+  c(
+    "Feeling like learning about #modeling? chapter name chapter has some adjective materials on it!",
+    "Need to prepare a workshop on #modeling? Browse the adjective chapter name's materials for inspiration!")
+
+modeling_tweets <- create_tweets(
+  modeling_data,
+  modeling_templates,
+  adjectives,
+  variable = html_url,
+  extra_text = " "
+)
+
+
+readr::write_csv(modeling_tweets,
+                 path = here::here("websites_repos_topics_tweets", "modeling_tweets.csv"))
