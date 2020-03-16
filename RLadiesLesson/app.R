@@ -147,13 +147,13 @@ server <- function(input, output) {
     data$Meetup <- paste0('<a href="', data$Meetup,'" target="_blank">', data$Meetup ,'</a>')
     data$GitHub <- paste0('<a href="', data$GitHub,'" target="_blank">', data$GitHub ,'</a>')
     
-    if (input$city != "All") {
+    if (input$city_gr != "All") {
       data <- data[data$City == input$city_gr,]
     }
-    if (input$topic != "All") {
+    if (input$country_gr != "All") {
       data <- data[data$Country == input$country_gr,]
     }
-    if (input$lang != "All") {
+    if (input$email_gr != "All") {
       data <- data[data$Email == input$email_gr,]
     }
     data
