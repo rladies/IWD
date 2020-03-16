@@ -133,10 +133,10 @@ server <- function(input, output) {
     if (input$city_wb != "All") {
       data <- data[data$City == input$city_wb,]
     }
-    if (input$topic != "All") {
-      data <- data[data$Country == input$Country,]
+    if (input$country != "All") {
+      data <- data[data$Country == input$country,]
     }
-    if (input$lang != "All") {
+    if (input$email != "All") {
       data <- data[data$Email == input$email,]
     }
     data
