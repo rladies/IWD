@@ -78,19 +78,19 @@ ui <- fluidPage(
              h3("Chapters GitHub Repos", style = "color:purple"),
              fluidRow(
                column(4,
-                      selectInput("city",
+                      selectInput("city_gr",
                                   "City:",
                                   c("All",
                                     unique(as.character(websites$City))))
                ),
                column(4,
-                      selectInput("country",
+                      selectInput("country_gr",
                                   "Country:",
                                   c("All",
                                     unique(as.character(websites$Country))))
                ),
                column(4,
-                      selectInput("email",
+                      selectInput("email_gr",
                                   "Email:",
                                   c("All",
                                     unique(as.character(websites$Email))))
@@ -148,13 +148,13 @@ server <- function(input, output) {
     data$GitHub <- paste0('<a href="', data$GitHub,'" target="_blank">', data$GitHub ,'</a>')
     
     if (input$city != "All") {
-      data <- data[data$City == input$city,]
+      data <- data[data$City == input$city_gr,]
     }
     if (input$topic != "All") {
-      data <- data[data$Country == input$Country,]
+      data <- data[data$Country == input$country_gr,]
     }
     if (input$lang != "All") {
-      data <- data[data$Email == input$email,]
+      data <- data[data$Email == input$email_gr,]
     }
     data
   }, escape = FALSE))
