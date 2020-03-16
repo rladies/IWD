@@ -53,7 +53,7 @@ ui <- fluidPage(
              # Create a new Row in the UI for selectInputs
              fluidRow(
                column(4,
-                      selectInput("city",
+                      selectInput("city_wb",
                                   "City:",
                                   c("All",
                                     unique(as.character(websites$City))))
@@ -130,8 +130,8 @@ server <- function(input, output) {
     data$Website <- paste0('<a href="', data$Website,'" target="_blank">', data$Website ,'</a>')
     data$Meetup <- paste0('<a href="', data$Meetup,'" target="_blank">', data$Meetup ,'</a>')
     
-    if (input$city != "All") {
-      data <- data[data$City == input$city,]
+    if (input$city_wb != "All") {
+      data <- data[data$City == input$city_wb,]
     }
     if (input$topic != "All") {
       data <- data[data$Country == input$Country,]
