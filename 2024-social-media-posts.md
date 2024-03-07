@@ -40,5 +40,6 @@ How can you help R-Ladies as an ally?
 💜 Invitations to speaks at conferences and highlighting job opportunities
 💜 Volunteer as a conference abstract reviewer: https://guide.rladies.org/comm/abstract-review/ 
 💜 Consult our R-Ladies directory: https://rladies.org/directory/ 
-💜 Donate to the global R-Ladies organization
+💜 Donate to the global R-Ladies organization: https://rladies.org/ (PayPal link at bottom)
+💜 More ally tips here: https://guide.rladies.org/ally/
 #IWD2024 #RLadies
