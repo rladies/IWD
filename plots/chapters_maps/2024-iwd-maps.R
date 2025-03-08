@@ -32,7 +32,7 @@ ggplot() +
   ) +
   labs(
     title = "R-Ladies Chapters",
-    caption = "Source: meetup.com (March 2024)"
+    caption = "Source: meetup.com (March 2025)"
   ) +
   coord_sf() +
   theme_void(base_size = 10) +
@@ -49,7 +49,7 @@ ggplot() +
     plot.caption = element_text(hjust = 0)
   )
 
-ggsave("plots/chapters_maps/2024-chapter-map.png", width = 5.5, height = 3, bg = "white")
+ggsave("plots/chapters_maps/2025-chapter-map.png", width = 5.5, height = 3, bg = "white")
 
 # Events bar chart --------------------------------------------------------
 
@@ -62,7 +62,7 @@ ggplot(events_bar_data) +
   geom_col(aes(x = year, y = n), fill = "#88398A") +
   geom_text(aes(x = year, y = n + 40, label = n), colour = "#88398A") +
   labs(title = "R-Ladies Events", x = "", y = "Number of events",
-       caption = "Source: meetup.com (March 2024)") +
+       caption = "Source: meetup.com (March 2025)") +
   theme_minimal(base_size = 10) +
   theme(
     plot.margin = margin(10, 10, 10, 10),
@@ -77,7 +77,7 @@ ggplot(events_bar_data) +
     plot.caption = element_text(hjust = 0)
   )
 
-ggsave("plots/chapters_maps/2024-events-bar.png", width = 5.5, height = 3, bg = "white")
+ggsave("plots/chapters_maps/2025-events-bar.png", width = 5.5, height = 3, bg = "white")
 
 # Events bar chart --------------------------------------------------------
 
@@ -94,7 +94,7 @@ ggplot(first_events_bar_data) +
   geom_text(aes(x = year, y = n + 8, label = n), colour = "#88398A") +
   labs(title = "New R-Ladies Chapters", x = "", 
        y = "Number of new chapters",
-       caption = "Source: meetup.com (March 2024)") +
+       caption = "Source: meetup.com (March 2025)") +
   theme_minimal(base_size = 10) +
   theme(
     plot.margin = margin(10, 10, 10, 10),
@@ -109,4 +109,4 @@ ggplot(first_events_bar_data) +
     plot.caption = element_text(hjust = 0)
   )
 
-ggsave("plots/chapters_maps/2024-first-events-bar.png", width = 5.5, height = 3, bg = "white")
+ggsave("plots/chapters_maps/2025-first-events-bar.png", width = 5.5, height = 3, bg = "white")
